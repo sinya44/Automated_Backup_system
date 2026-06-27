@@ -1,0 +1,44 @@
+System Architecture Overview
+
+The Automated Backup & Recovery Management System is developed using Python with a Tkinter-based graphical user interface. The user starts the backup process through the GUI. The system uses shutil and datetime libraries to create timestamped backup files and store them in the backup folder. All backup information, including date, source path, destination path, and status, is stored in an SQLite database for record keeping and recovery purposes.
+
+User → Tkinter GUI
+
+├── Create Backup
+│      ↓
+│   Backup Module (shutil + datetime)
+│      ↓
+│   Backup Folder (ZIP Files)
+│      ↓
+│   SQLite Database (Store Backup Records)
+│
+├── Restore Backup
+│      ↓
+│   Recovery Module
+│      ↓
+│   Restore Files to Source Folder
+│
+└── View History
+↓
+SQLite Database
+↓
+Display Backup Records
+
+
+ Deployment Instructions
+
+1. Install Python 3 on your system.
+
+2. Ensure that the required Python libraries are available, including Tkinter, shutil, sqlite3, datetime, and zipfile.
+
+3. Download or clone the project files.
+
+4. Create the required folders such as Source_File and backups.
+
+5. Run the main Python file using the command:
+
+   python main.py
+
+6. The GUI application will open and allow users to create backups.
+
+7. Backup records will be stored automatically in the SQLite database.
